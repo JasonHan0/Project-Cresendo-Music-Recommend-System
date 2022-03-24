@@ -1,0 +1,34 @@
+<!-- templates/base/base.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">    
+    <head><!-- 헤더 영역 -->    
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="{{descript}}" />
+    <meta name="author" content="pythonblog" />
+    <title>{{title_nm}}</title>
+    {% block css %}
+     <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
+    {% endblock css %}
+    </head> 
+    <body class="sb-nav-fixed"><!-- 바디 영역 -->       
+        <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark"></nav><!-- 상단네비 -->
+        <div id="layoutSidenav">        
+            <div id="layoutSidenav_nav"></div><!-- 좌측네비 -->
+            <div id="layoutSidenav_content"><!--  컨텐츠 -->
+                <main>
+                {% block content %}                 
+                {% endblock content %}
+                </main> 
+                <footer class="py-4 bg-light mt-auto"></footer><!-- 하단 푸터 -->
+            </div>
+        </nav>
+        {% block js %}
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="js/scripts.js"></script>       
+        {% endblock js %}
+    </body>
+</html>
